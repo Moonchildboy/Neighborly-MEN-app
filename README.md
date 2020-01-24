@@ -32,7 +32,8 @@ Registration:
 Logged in: 
 
 		rendered prof. show page
-			Nav: occupants :: feed :: new post :: my prof
+			Nav: occupants :: feed :: new 
+			 :: my prof
 			my prof(show): 
 				- img
 				- name 
@@ -42,7 +43,6 @@ Logged in:
 				- addresses
 				- edit btn
 		clicked feed, 
-	
 
 		feed renders
 			Nav: occupants :: new post :: my prof 
@@ -57,15 +57,15 @@ Logged in:
 			Nav: feed :: new post :: my prof
 			occupants (index): 
 				- LL prof page
+				- View individual tenants profiles
 				- list of units containing residents
 				- contact entire units anonymously * 
 	If LL: 
 			Nav: feed :: new post :: my prof :: edit page
 			occupants (index): 
 				- list of units containing residents
-				- edit btn (+ - residents and/or units)	
+				- edit btn (+ - residents and/or units)
 
-	
 
 ==========================================================
 MODELS ::
