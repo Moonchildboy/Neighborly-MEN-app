@@ -73,32 +73,54 @@ MODELS
 User 
 * username: String
 * password: String
-* isLandLord: Boolean
+* firstName: String
+* lastName: String
+* image: String (upload file later)
+* aboutMe: String
+* unit: {
+	objectid
+	ref: unit
+}
 
 Post
 * title: String
 * content: String
 * comments: [Comment.schema]
-
-Comment
-* content: String
-
-Building 
-* address: String
-* units: [{
-	unitNum: Number,
-	occupants: [String]
-}]
-
-Profile
-* name: String
-* image: String (upload file later)
-* aboutMe: String
-* reviews: [Comment.schema]
 * building: {
 	type: mongoose.Schema.Types.ObjectId,
 	ref: 'Building'
 } 
+* date: Date
+
+Comment
+* content: String
+* date
+
+Building 
+* address: String
+* landlord: {
+	ref: 'User'
+}
+
+Unit {
+	nameNumber: String
+	building: {
+		objectid
+		ref building
+	}
+}
+
+Review {
+	reviewer: {
+		objectid
+		ref: User
+	}
+	reviewee: {
+		objectid
+		ref: User
+	}
+	date: Date
+}
 
 
 
