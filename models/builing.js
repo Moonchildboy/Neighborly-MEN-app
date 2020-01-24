@@ -11,5 +11,4 @@ const buildingSchema = new mongoose.Schema({
 	}
 })
 
-
 module.exports = mongoose.model('Building', buildingSchema)

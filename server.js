@@ -5,6 +5,27 @@ const PORT = process.env.PORT
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// controllers
+const authController = require('./controllers/authController')
+app.use('/auth', authController)
+
+
+
+
+
 app.get('/', (req, res) => {
 	res.render('home.ejs')	
 })
