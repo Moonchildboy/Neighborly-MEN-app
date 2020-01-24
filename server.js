@@ -5,23 +5,14 @@ const PORT = process.env.PORT
 
 
 
+// MIDDLEWARE
+app.use(express.static('public'))
 
-
-
-
-
-
-
-
-
-
-
-
-
-// controllers
+// CONTROLLERS
 const authController = require('./controllers/authController')
 app.use('/auth', authController)
 
+// ROUTES
 
 
 
