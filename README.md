@@ -2,41 +2,69 @@
 
 LL == Land Lord
 T == Tenant
-
+==========================================================
 USER STORIES ::
+==========================================================
 
-	 Registration:
+Registration:
 
 		renders forms:
-			registration page:
+			registration page (new):
 				- takes user name
 				- takes password
 				- specify user type (LL or T)
+		then, 
 
 	If LL:
-		redirected to their bldg. form (LL view)
+		redirected to their bldg. form (new)
 				- addr.
 				- units. 
+		then, 
 
-		redirected to their prof. form (LL view)
-			prof(new):
+	If LL or T:	
+		redirected to their prof. form 
+			prof(edit):
 				- takes image 
 				- takes desc.
 				- name 
 
-		redirects to prof. show page
-			prof(show): 
+Logged in: 
+
+		rendered prof. show page
+			Nav: occupants :: feed :: new post :: my prof
+			my prof(show): 
+				- img
 				- name 
 				- about me
 				- reviews
 				- ratings
 				- addresses
+				- edit btn
+		clicked feed, 
 	
-	LL Login: 
-		redirected to the main feed (LL view)
-			feed: 
+
+		feed renders
+			Nav: occupants :: new post :: my prof 
+			feed (index): 
 				- contains announcements, etc, from all users
-				-  
+				- make comments on anonymous posts
+				- ...
+		clicked occupants, 
+
+		render of occupants index page 
+	If T: 
+			Nav: feed :: new post :: my prof
+			occupants (index): 
+				- LL prof page
+				- list of units containing residents
+				- contact entire units anonymously * 
+	If LL: 
+			Nav: feed :: new post :: my prof :: edit page
+			occupants (index): 
+				- list of units containing residents
+				- edit btn (+ - residents and/or units)	
+
+	
 
 ==========================================================
 MODELS
