@@ -9,8 +9,7 @@ const PORT = process.env.PORT
 
 
 
-
-// middleware
+// MIDDLEWARE
 app.use(express.static('public'))
 app.use(methodOverride('_method'))
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -23,10 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 
 
-
-
-
-// controllers
+// CONTROLLERS
 const authController = require('./controllers/authController')
 app.use('/auth', authController)
 
@@ -34,6 +30,7 @@ app.use('/auth', authController)
 
 
 
+// ROUTES
 app.get('/', (req, res) => {
 	res.render('home.ejs')	
 })
