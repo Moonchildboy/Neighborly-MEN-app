@@ -6,7 +6,7 @@ const app = express()
 const PORT = process.env.PORT
 
 
-
+require('./db/db')
 
 
 // MIDDLEWARE
