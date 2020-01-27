@@ -4,6 +4,7 @@ const buildingSchema = new mongoose.Schema({
 		type: String,
 		required: true
 		},
+	floors: Number,
 	landlord: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'User',
