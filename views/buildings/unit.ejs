@@ -1,6 +1,6 @@
 <%- include('../partials/header2.ejs')%>
 
-	<h1>Add a New Building</h1>
+	<h1>Add a New Unit</h1>
 	<form method="POST" action="/buildings/unit">
 		<fieldset>
 			<legend>
@@ -15,6 +15,13 @@
 			<% for(let i = 0; i < users.length; i++) { %>
 			<%=i%>
 			<option value=<%=users[i]._id%>><%=users[i].firstName%> <%=users[i].lastName%></option>
+		<% } %>
+		</select>
+		<label for="buildings">Select Buildings:</label>
+			<select name="buildings">
+			<% for(let i = 0; i < buildings.length; i++) { %>
+			<%=i%>
+			<option value=<%=buildings[i]._id%>><%=buildings[i].address%></option>
 		<% } %>
 		</select>
 		<button>Submit!</button>

@@ -9,7 +9,11 @@ const buildingSchema = new mongoose.Schema({
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'User',
 		required: true
-	}
+	},
+	units: [{
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'Unit'
+	}]
 })
 
 module.exports = mongoose.model('Building', buildingSchema)

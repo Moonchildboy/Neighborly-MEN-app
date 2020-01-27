@@ -10,9 +10,11 @@ router.get('/new', (req, res) => {
 })
 
 router.get('/unit', async (req, res) => {
+	const foundBuildings = await Building.find({})
 	const foundUsers = await User.find({})
 	res.render('buildings/unit.ejs', {
-		users: foundUsers
+		users: foundUsers,
+		buildings: foundBuildings
 	})	
 })
 
@@ -21,6 +23,7 @@ router.post('/', async (req, res, next) => {
 		req.body.landlord = req.session.userId
 		const newBuilding = await Building.create(req.body)
 		console.log(newBuilding);
+		req.session.building = newBuilding
 		res.redirect('/buildings/unit')
 	} catch(err) {
 		next(err)
@@ -29,9 +32,12 @@ router.post('/', async (req, res, next) => {
 
 router.post('/unit', async (req, res, next) => {
 	try{
-
-		const NewUnit = await Unit.create(req.body)
-		console.log(NewUnit);
+		console.log("this is req.body in the post /unit route >>", req.body);
+		const newUnit = await Unit.create(req.body)
+		//find building to push new Unit into by id
+		const foundBuilding = await Building.findById(req.body.buildings)
+		foundBuilding.units.push(newUnit)
+		foundBuilding.save()
 		res.redirect('/buildings/unit')
 	}catch(err) {
 		next(err)
