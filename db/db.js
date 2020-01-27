@@ -9,14 +9,14 @@ mongoose.connect(connectionString, {
 })
 
 mongoose.connection.on('connected', () => {
-  console.log(`connected to database`);
+  console.log('connected to database');
 })
 
 mongoose.connection.on('disconnected', () => {
-  console.log(`disconnected from database`);
+  console.log('disconnected from database');
 })
 
 mongoose.connection.on('error', (err) => {
-  console.log(`error with database connection:`);
+  console.log('error with database connection:');
   console.log(err)
 })

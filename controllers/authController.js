@@ -54,6 +54,26 @@ router.post('/register', async (req, res, next) => {
 })
 
 
+router.get('/login', (req, res) => {
+	res.render('login.ejs')
+})
+
+router.get('/login', async (req, res, next) => {
+	try{
+		const user = await User.findOne({ username: req.body.username })
+
+		if(!user) {
+			console.log('bad username');
+			res.redirect('/auth/login')
+		}
+	}catch(err) {
+		next(err)
+	}
+})
+
+
+
+
 
 
 
