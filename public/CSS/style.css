@@ -5,3 +5,9 @@ body {
 nav	{
 	color: #e4e4a1;
 }
+
+.bad {
+	background-color: indianred;
+	border: 2px solid firebrick;
+	color: firebrick;
+}

@@ -16,7 +16,7 @@ router.get('/register', (req, res) => {
 
 	res.render('register.ejs', {
 		message: message,
-		messageStatus: messageStatus
+		status: messageStatus
 	})
 })
 
@@ -25,8 +25,8 @@ router.get('/register', (req, res) => {
 
 router.post('/register', async (req, res, next) => {
 	console.log(req.body);
-	const desiredUsername = req.session.username
-	const desiredPassword = req.session.password
+	const desiredUsername = req.body.username
+	const desiredPassword = req.body.password
 
 	const userWithUsername = await User.findOne({
 		username: desiredUsername
@@ -45,12 +45,11 @@ router.post('/register', async (req, res, next) => {
 		console.log(createdUser);
 		req.session.userId = createdUser._id
 		req.session.username = createdUser.username
-		req.session.message = (`Welcome to Neighborlie ${createdUser.username}`)
+		req.session.message = (`Welcome to Neighborlie, ${createdUser.username}.`)
 		req.session.loggedIn = true
 		req.session.messageStatus = "good"
 		res.redirect('/')
 	}
-
 })
 
 
@@ -58,7 +57,7 @@ router.get('/login', (req, res) => {
 	res.render('login.ejs')
 })
 
-router.get('/login', async (req, res, next) => {
+router.post('/login', async (req, res, next) => {
 	try{
 		const user = await User.findOne({ username: req.body.username })
 
