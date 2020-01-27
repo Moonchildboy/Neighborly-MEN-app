@@ -65,6 +65,16 @@ router.get('/login', async (req, res, next) => {
 		if(!user) {
 			console.log('bad username');
 			res.redirect('/auth/login')
+		} else {
+			if (user.password == req.body.password) {
+				req.session.loggedIn = true
+			    req.session.userId = user._id
+			    req.session.username = user.username
+			    res.redirect('/')
+			} else {
+				console.log("bad password")
+				res.redirect('/auth/login')
+			}
 		}
 	}catch(err) {
 		next(err)
