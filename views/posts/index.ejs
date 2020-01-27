@@ -1,6 +1,8 @@
 <%- include('../partials/header2.ejs')%>
 
 <h1>Community News Feed</h1>
+
+<div id="index-container">
 <% 
   posts.forEach((post) => { %>
   <div>
@@ -9,6 +11,6 @@
     (<a href="/posts/<%= post._id %>/posts"><%= post.content %></a>)
   </div>  
 <% }) %>
-
+</div>
 
 <%- include('../partials/footer.ejs')%>

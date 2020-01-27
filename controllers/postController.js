@@ -9,17 +9,17 @@ router.get('/new', (req, res, next) => {
 })
 
 router.post('/', async (req, res, next) => {
-	const createdPost = await Post.create({
-		title: req.body.title,
-		content: req.body.content
+	console.log(req.body);
+	const createdPost = await Post.create(req.body)
 		// create date later
-	})
-	res.redirect('posts/index.ejs')
+	console.log("createdPost:",createdPost);
+	res.redirect('posts/')
 }) //end of create route
 
-router.get('/', (req, res, next) => {
-	// const allPosts = await Post.find({}).populate('...')
-  res.render('posts/index.ejs')
+router.get('/', async (req, res, next) => {
+	console.log('hitting the index route');
+	const allPosts = await Post.find({})
+  res.render('posts/index.ejs', {posts: allPosts})
 })// end of index route
 
 module.exports = router 

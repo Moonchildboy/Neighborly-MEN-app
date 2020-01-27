@@ -26,7 +26,6 @@ body {
 	border-radius: 5px;
 	padding: 5px;
 	background-color:whitesmoke;
-	
 }
 /*text area for content:*/
 #new-post{
@@ -37,6 +36,14 @@ body {
 	border: 5px solid black;
 	padding: 5px;
 	background-color:whitesmoke;
+}
+#index-container{
+	position: absolute;
+	background-color: #e4e4a1;
+	border-radius:20px;
+	padding: 5px;
+	width: 40%;
+	left: 30%;
 }
 
 nav {
