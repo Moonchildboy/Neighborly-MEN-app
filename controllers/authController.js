@@ -8,17 +8,49 @@ const User = require('../models/user')
 
 
 router.get('/register', (req, res) => {
-	res.render('register.ejs')
+	let message = req.session.message
+  	let messageStatus = req.session.messageStatus
+
+  	req.session.message = undefined
+  	req.session.messageStatus = undefined
+
+	res.render('register.ejs', {
+		message: message,
+		messageStatus: messageStatus
+	})
 })
-
-
 
 
 
 
 router.post('/register', async (req, res, next) => {
 	console.log(req.body);
-	res.redirect('/auth/register')
+	const desiredUsername = req.session.username
+	const desiredPassword = req.session.password
+
+	const userWithUsername = await User.findOne({
+		username: desiredUsername
+	})
+
+	if (userWithUsername) {
+		console.log('username exists');
+		req.session.message = `Username ${desiredUsername} is taken.`
+		req.session.messageStatus = 'bad'
+		res.redirect('/auth/register')
+	} else {
+		const createdUser = await User.create({
+      	username: desiredUsername,
+      	password: desiredPassword
+    })
+		console.log(createdUser);
+		req.session.userId = createdUser._id
+		req.session.username = createdUser.username
+		req.session.message = (`Welcome to Neighborlie ${createdUser.username}`)
+		req.session.loggedIn = true
+		req.session.messageStatus = "good"
+		res.redirect('/')
+	}
+
 })
 
 
