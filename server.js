@@ -33,6 +33,8 @@ const authController = require('./controllers/authController')
 app.use('/auth', authController)
 const postController = require('./controllers/postController')
 app.use('/posts', postController)
+const buildingController = require('./controllers/buildingController')
+app.use('/buildings', buildingController)
 
 
 
