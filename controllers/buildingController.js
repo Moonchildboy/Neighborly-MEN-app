@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Building = require('../models/building')
 const Unit = require('../models/unit')
+const User = require('../models/user')
 
 
 router.get('/new', (req, res) => {

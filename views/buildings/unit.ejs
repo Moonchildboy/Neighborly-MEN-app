@@ -14,7 +14,7 @@
 			<select name="tenants">
 			<% for(let i = 0; i < users.length; i++) { %>
 			<%=i%>
-			<option value=<%=users[i]._id%>><%=users[i].name%></option>
+			<option value=<%=users[i]._id%>><%=users[i].firstName%> <%=users[i].lastName%></option>
 		<% } %>
 		</select>
 		<button>Submit!</button>
