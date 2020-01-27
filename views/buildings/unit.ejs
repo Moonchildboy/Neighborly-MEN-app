@@ -1,0 +1,17 @@
+<%- include('../partials/header2.ejs')%>
+
+	<h1>Add a New Building</h1>
+	<form method="POST" action="/buildings/unit">
+		<fieldset>
+			<legend>
+				<small>
+					Unit 1
+				</small>
+			</legend>
+			<label for="number">Unit Number:</label>
+			<input type="number" name="number" placeholder="enter unit number">
+			<label for=""></label>
+		<button>Submit!</button>
+		</fieldset>
+	</form>
+<%- include('../partials/footer.ejs')%>

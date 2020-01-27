@@ -48,4 +48,9 @@ body {
 
 nav {
 	background-color: #e4e4a1;
+	color: black;
+}
+
+a {
+	color: black;
 }
