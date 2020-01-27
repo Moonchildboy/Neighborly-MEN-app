@@ -2,6 +2,16 @@ body {
 	background-color: #39481f;
 	color:#e4e4a1;
 }
-nav	{
-	color: #e4e4a1;
+/*home page div*/
+#description-1{
+	background-color: #e4e4a1;
+	border-radius: 25px;
+	padding: 5px;
+	width: 50%;
+	box-shadow: 10px 5px 5px #1d2410;
+}
+
+.description {
+	color:  #39481f;
+	font-size: 24px;
 }
