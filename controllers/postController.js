@@ -8,4 +8,5 @@ router.get('/', (req, res, next) => {
   res.render('posts/index.ejs')
 })
 
-module.exports = router
+module.exports = router 
+
