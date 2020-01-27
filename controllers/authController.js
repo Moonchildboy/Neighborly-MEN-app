@@ -69,7 +69,7 @@ router.post('/login', async (req, res, next) => {
 				req.session.loggedIn = true
 			    req.session.userId = user._id
 			    req.session.username = user.username
-			    res.redirect('/')
+			    res.redirect('/posts')
 			} else {
 				console.log("bad password")
 				res.redirect('/auth/login')
