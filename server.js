@@ -16,6 +16,11 @@ app.use(methodOverride('_method'))
 app.use(bodyParser.urlencoded({ extended: false }))
 
 
+app.use(session({
+	secret: process.env.SESSION_SECRET,
+	resave: false, 
+	saveUninitialized: false
+}))
 
 
 
