@@ -22,9 +22,9 @@ router.get('/', async (req, res, next) => {
   res.render('posts/index.ejs', {posts: allPosts})
 })// end of index route
 
-router.get('/', async (req, res, next) => {
+router.get('/:id/edit', async (req, res, next) => {
 	
-}) //end of show route
+}) //end of edit route
 
 module.exports = router 
 

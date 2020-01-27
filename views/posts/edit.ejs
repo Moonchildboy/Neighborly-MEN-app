@@ -1,0 +1,11 @@
+<%- include('../partials/header2.ejs')%>
+
+
+<form method="POST" action="/post/<%= post._id %>?_method=PUT">
+	
+ <fieldset>
+      <label for="title">Post Title:</label>
+      <input id="title" type="text" name="title" placeholder="New post title" value="<%= post.title %>" />
+</fieldset>
+
+<%- include('../partials/footer.ejs')%>
