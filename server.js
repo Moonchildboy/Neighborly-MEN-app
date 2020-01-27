@@ -31,6 +31,8 @@ app.use(session({
 // CONTROLLERS
 const authController = require('./controllers/authController')
 app.use('/auth', authController)
+const postController = require('./controllers/postController')
+app.use('/post', postController)
 
 
 
