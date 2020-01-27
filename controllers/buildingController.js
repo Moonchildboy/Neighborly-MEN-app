@@ -2,14 +2,18 @@ const express = require('express')
 const router = express.Router()
 const Building = require('../models/building')
 const Unit = require('../models/unit')
+const User = require('../models/user')
 
 
 router.get('/new', (req, res) => {
 	res.render('buildings/new.ejs')	
 })
 
-router.get('/unit', (req, res) => {
-	res.render('buildings/unit.ejs')	
+router.get('/unit', async (req, res) => {
+	const foundUsers = await User.find({})
+	res.render('buildings/unit.ejs', {
+		users: foundUsers
+	})	
 })
 
 router.post('/', async (req, res, next) => {
@@ -25,6 +29,7 @@ router.post('/', async (req, res, next) => {
 
 router.post('/unit', async (req, res, next) => {
 	try{
+
 		const NewUnit = await Unit.create(req.body)
 		console.log(NewUnit);
 		res.redirect('/buildings/unit')
