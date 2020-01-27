@@ -8,8 +8,14 @@ const userSchema = new mongoose.Schema({
 		type: String,
 		required: true
 		},
-	firstName: String,
-	lastName: String,
+	firstName: {
+		type: String,
+		required: true
+		},
+	lastName: {
+		type: String,
+		required: true
+		},
 	image: String,
 	aboutMe: String,
 	unit: {
