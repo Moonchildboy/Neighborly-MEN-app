@@ -38,10 +38,7 @@ router.post('/register', async (req, res, next) => {
 		req.session.messageStatus = 'bad'
 		res.redirect('/auth/register')
 	} else {
-		const createdUser = await User.create({
-      	username: desiredUsername,
-      	password: desiredPassword
-    })
+		const createdUser = await User.create(req.body)
 		console.log(createdUser);
 		req.session.userId = createdUser._id
 		req.session.username = createdUser.username

@@ -10,7 +10,13 @@
 			</legend>
 			<label for="number">Unit Number:</label>
 			<input type="number" name="number" placeholder="enter unit number">
-			<label for=""></label>
+			<label for="tenants">Select Tenants:</label>
+			<select name="tenants">
+			<% for(let i = 0; i < users.length; i++) { %>
+			<%=i%>
+			<option value=<%=users[i]._id%>><%=users[i].name%></option>
+		<% } %>
+		</select>
 		<button>Submit!</button>
 		</fieldset>
 	</form>
