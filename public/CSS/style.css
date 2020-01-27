@@ -2,6 +2,7 @@ body {
 	background-color: #39481f;
 	color:#e4e4a1;
 }
+<<<<<<< HEAD
 /*home page div*/
 #description-1{
 	background-color: #e4e4a1;
@@ -15,3 +16,14 @@ body {
 	color:  #39481f;
 	font-size: 24px;
 }
+=======
+nav	{
+	color: #e4e4a1;
+}
+
+.bad {
+	background-color: indianred;
+	border: 2px solid firebrick;
+	color: firebrick;
+}
+>>>>>>> 52ccb7ffd29651b190ffab62dc45d0ddb6ba5533
