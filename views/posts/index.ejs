@@ -1,5 +1,14 @@
 <%- include('../partials/header2.ejs')%>
 
 <h1>Community News Feed</h1>
+<% 
+  posts.forEach((post) => { %>
+  <div>
+    <strong><a href="/posts/<%= post._id %>"><%= post.title %></a>
+    </strong> 
+    (<a href="/posts/<%= post._id %>/posts"><%= post.content %></a>)
+  </div>  
+<% }) %>
+
 
 <%- include('../partials/footer.ejs')%>

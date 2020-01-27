@@ -1,0 +1,11 @@
+<%- include('../partials/header2.ejs')%>
+
+<form method="POST" action="/posts">
+	<fieldset>
+		<input id="title" type="text" name="title" placeholder="What's your post about?">
+		<textarea id="new-post" placeholder="Create a new post here" name="content"></textarea>
+	</fieldset>
+		<button>submit post</button>
+</form>
+
+<%- include('../partials/footer.ejs')%>
