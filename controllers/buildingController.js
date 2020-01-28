@@ -36,13 +36,14 @@ router.post('/unit', async (req, res, next) => {
 		const newUnit = await Unit.create(req.body)
 		//find building to push new Unit into by id
 		const foundBuilding = await Building.findById(req.body.buildings)
+		console.log('');
 		foundBuilding.units.push(newUnit)
 		foundBuilding.save()
 		res.redirect('/buildings/unit')
-	}catch(err) {
+	} catch(err) {
 		next(err)
 	}
-})
+}) // create route to be made into a render
 
 
 
