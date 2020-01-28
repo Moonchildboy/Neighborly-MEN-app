@@ -27,7 +27,7 @@ body {
 	padding: 5px;
 	background-color:whitesmoke;
 }
-/*text area for content:*/
+/*text area for new content:*/
 #new-post{
 	position: absolute;
 	width:40%;
@@ -37,15 +37,19 @@ body {
 	padding: 5px;
 	background-color:whitesmoke;
 }
+
 #index-container{
 	position: relative;
+	color: red;
 	background-color: #e4e4a1;
-	border: 10px solid rgba(0, 0, 0, .2); 
+	border: 10px solid rgba(0, 0, 0, .2);
+	border-radius: 10px 
 	/*rgba(255, 255, 255, .2)*/
 	padding: 5px;
 	width: 40%;
 	left: 30%;
 	z-index: -1;
+	float: flex;
 }
 
 nav {
@@ -60,5 +64,9 @@ nav {
 }
 
 a {
+<<<<<<< HEAD
 	color: black;
+=======
+
+>>>>>>> 4bbdbc13447561dc2e39e51b0a54bf3b7f5e1d21
 }

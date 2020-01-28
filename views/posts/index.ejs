@@ -2,15 +2,23 @@
 
 <h1>Community News Feed</h1>
 
-<div id="index-container">
-<% 
-  posts.forEach((post) => { %>
-  <div>
-    <strong><a href="/posts/<%= post._id %>"><%= post.title %></a>
-    </strong> 
-    (<a href="/posts/<%= post._id %>/posts"><%= post.content %></a>)
-  </div>  
+
+
+<ul>
+
+
+	<% posts.forEach((post) => { %>
+		<li>
+			<strong><%= post.title %></strong>
+		</li>
+	    <p>
+	    	<%= post.content %>
+	    </p>
+	  	<a href="/posts/<%= post._id %>/edit">(Edit <%=post.title%>)</a>
+
 <% }) %>
-</div>
+
+</ul>
+
 
 <%- include('../partials/footer.ejs')%>
