@@ -10,7 +10,6 @@ const unitSchema = new mongoose.Schema({
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'User'
 	}],
-	// unit = Unit.find(id: {$in: tenants})
 	building: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'Building'

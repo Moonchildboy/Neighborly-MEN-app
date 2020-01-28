@@ -48,6 +48,12 @@ router.post('/unit', async (req, res, next) => {
 })
 
 
+// my community
+	// unit = Unit.find(id: {$in: tenants}).populate(tenant)
+	// bldg = unit.building
+	// get all units that have this building .. populate(tenant)
+
+
 
 
 module.exports = router
