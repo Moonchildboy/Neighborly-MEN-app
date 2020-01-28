@@ -10,8 +10,9 @@ router.get('/new', (req, res) => {
 })
 
 router.get('/unit', async (req, res) => {
-	const foundBuildings = await Building.find({})
+	const foundBuildings = await Building.find({}).populate('units')
 	const foundUsers = await User.find({})
+
 	res.render('buildings/unit.ejs', {
 		users: foundUsers,
 		buildings: foundBuildings
@@ -33,17 +34,17 @@ router.post('/unit', async (req, res, next) => {
 	try{
 		console.log("this is req.body in the post /unit route >>", req.body);
 		const newUnit = await Unit.create(req.body)
-		//find building to push new Unit into by id
-		const foundBuilding = await Building.findById(req.body.buildings)
-		console.log('');
-		foundBuilding.units.push(newUnit)
-		foundBuilding.save()
-		console.log(req.session.building);
 		res.redirect('/buildings/unit')
 	} catch(err) {
 		next(err)
 	}
 }) // create route to be made into a render
+
+
+// my community
+	// unit = Unit.find(id: {$in: tenants}).populate(tenant)
+	// bldg = unit.building
+	// get all units that have this building .. populate(tenant)
 
 
 
