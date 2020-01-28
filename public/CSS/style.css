@@ -38,19 +38,26 @@ body {
 	background-color:whitesmoke;
 }
 #index-container{
-	position: absolute;
+	position: relative;
 	background-color: #e4e4a1;
-	border-radius:20px;
+	border: 10px solid rgba(0, 0, 0, .2); 
+	/*rgba(255, 255, 255, .2)*/
 	padding: 5px;
 	width: 40%;
 	left: 30%;
+	z-index: -1;
 }
 
 nav {
 	background-color: #e4e4a1;
 	color: black;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 20px;
+	padding:9px;
+	border: 1px solid #39481f;
 }
 
 a {
-	color: black;
+	color: #39481f;
 }
