@@ -11,7 +11,7 @@
 			<label for="number">Unit Number:</label>
 			<input type="number" name="number" placeholder="enter unit number">
 			<label for="tenants">Select Tenants:</label>
-			<select name="tenants">
+			<select class="js-example-basic-multiple" name="tenants" multiple>
 			<% for(let i = 0; i < users.length; i++) { %>
 			<%=i%>
 			<option value=<%=users[i]._id%>><%=users[i].firstName%> <%=users[i].lastName%></option>
@@ -27,4 +27,5 @@
 		<button>Submit!</button>
 		</fieldset>
 	</form>
+
 <%- include('../partials/footer.ejs')%>
