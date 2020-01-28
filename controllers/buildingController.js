@@ -46,10 +46,7 @@ router.post('/unit', async (req, res, next) => {
 }) // create route to be made into a render
 
 
-// my community
-	// unit = Unit.find(id: {$in: tenants}).populate(tenant)
-	// bldg = unit.building
-	// get all units that have this building .. populate(tenant)
+
 
 
 
