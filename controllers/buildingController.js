@@ -22,7 +22,6 @@ router.post('/', async (req, res, next) => {
 	try {
 		req.body.landlord = req.session.userId
 		const newBuilding = await Building.create(req.body)
-		console.log(newBuilding);
 		req.session.building = newBuilding
 		res.redirect('/buildings/unit')
 	} catch(err) {
@@ -38,6 +37,7 @@ router.post('/unit', async (req, res, next) => {
 		const foundBuilding = await Building.findById(req.body.buildings)
 		foundBuilding.units.push(newUnit)
 		foundBuilding.save()
+		console.log(req.session.building);
 		res.redirect('/buildings/unit')
 	}catch(err) {
 		next(err)

@@ -56,8 +56,9 @@ nav {
 	top: 20px;
 	padding:9px;
 	border: 1px solid #39481f;
+	margin-bottom: 15px;
 }
 
 a {
-	color: #39481f;
+	color: black;
 }
