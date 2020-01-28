@@ -35,10 +35,10 @@ router.post('/unit', async (req, res, next) => {
 		console.log("this is req.body in the post /unit route >>", req.body);
 		const newUnit = await Unit.create(req.body)
 		res.redirect('/buildings/unit')
-	}catch(err) {
+	} catch(err) {
 		next(err)
 	}
-})
+}) // create route to be made into a render
 
 
 
