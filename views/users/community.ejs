@@ -2,4 +2,17 @@
 
 	<h1>My Community</h1>
 
+	<p>Building Address: <%=address%></p>
+
+	<ul>
+		<% for (var i = 0; i < units.length; i++) { -%>
+			Unit Number: <%=units[i].number%>
+			<% for (var j = 0; j < units[i].tenants.length; j++) { -%>
+			<li>
+				<%=units[i].tenants[j].firstName%> <%=units[i].tenants[j].LastName%>
+			</li> 
+			<% } -%>
+		<% } -%>
+	</ul>
+
 <%- include('../partials/footer.ejs')%>
