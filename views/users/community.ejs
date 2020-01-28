@@ -1,5 +1,13 @@
 <%- include('../partials/header2.ejs')%>
 
 	<h1>My Community</h1>
-
+<ul>
+	Unit Number: <%=unitNumber%>
+	<%
+	for (let i = 0; i < myRoomies.length; i ++){ %>
+	<li>
+ 	<%= myRoomies[i].firstName%> <%= myRoomies[i].lastName%>
+ 	</li>
+	<%} %>
+</ul>
 <%- include('../partials/footer.ejs')%>

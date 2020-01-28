@@ -34,6 +34,11 @@ router.post('/unit', async (req, res, next) => {
 	try{
 		console.log("this is req.body in the post /unit route >>", req.body);
 		const newUnit = await Unit.create(req.body)
+		//find building to push new Unit into by id
+		// const foundBuilding = await Building.findById(req.body.building)
+		// foundBuilding.units.push(newUnit)
+		// foundBuilding.save()
+		// console.log(req.session.building);
 		res.redirect('/buildings/unit')
 	} catch(err) {
 		next(err)

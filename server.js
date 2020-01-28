@@ -25,9 +25,6 @@ app.use(session({
 
 
 
-
-
-
 // CONTROLLERS
 const authController = require('./controllers/authController')
 app.use('/auth', authController)
