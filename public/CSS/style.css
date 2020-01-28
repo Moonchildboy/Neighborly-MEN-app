@@ -60,8 +60,13 @@ nav {
 	top: 20px;
 	padding:9px;
 	border: 1px solid #39481f;
+	margin-bottom: 15px;
 }
 
 a {
+<<<<<<< HEAD
+	color: black;
+=======
 
+>>>>>>> 4bbdbc13447561dc2e39e51b0a54bf3b7f5e1d21
 }
