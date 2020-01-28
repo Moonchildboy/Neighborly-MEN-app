@@ -52,6 +52,11 @@ body {
 	float: flex;
 }
 
+img{
+	width: 30%;
+	height: 300px;
+}
+
 nav {
 	background-color: #e4e4a1;
 	color: black;
@@ -64,9 +69,7 @@ nav {
 }
 
 a {
-<<<<<<< HEAD
 	color: black;
-=======
 
->>>>>>> 4bbdbc13447561dc2e39e51b0a54bf3b7f5e1d21
-}
+
+
