@@ -35,15 +35,11 @@ router.post('/register', async (req, res, next) => {
 	if (userWithUsername) {
 		console.log('username exists');
 		req.session.message = `Username ${desiredUsername} is taken.`
-		req.session.messageStatus = 'bad'
+		req.session.messageStatus = "bad"
 		res.redirect('/auth/register')
 	} else {
 		const createdUser = await User.create(req.body)
 		console.log(createdUser);
-		// req.session.userId = createdUser._id
-		// req.session.username = createdUser.username
-		req.session.message = (`Welcome to Neighborlie, ${createdUser.username}.`)
-		// req.session.loggedIn = true
 		req.session.messageStatus = "good"
 		res.redirect('/')
 	}
@@ -64,8 +60,11 @@ router.post('/login', async (req, res, next) => {
 		} else {
 			if (user.password == req.body.password) {
 				req.session.loggedIn = true
+				req.session.firstName = user.firstName
 			    req.session.userId = user._id
 			    req.session.username = user.username
+			    req.session.message = (`Welcome to Neighborlie, ${req.session.firstName}.`)
+			    req.session.messageStatus = "good"
 			    res.redirect('/posts')
 			} else {
 				console.log("bad password")

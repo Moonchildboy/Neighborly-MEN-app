@@ -22,7 +22,12 @@ h1 {
 .bad {
 	background-color: indianred;
 	border: 2px solid firebrick;
-	color: firebrick;
+	color: black;
+}
+.good {
+	background-color: lightgreen;
+	border: 2px solid green;
+	color: black;
 }
 /*the form for new posts*/
 #title{
@@ -86,6 +91,7 @@ a {
 	padding: 15px;
 	margin: 0 auto;
 	color: black;
+	margin-bottom: 10px;
 }
 
 .creator {
@@ -95,6 +101,7 @@ a {
 
 .title {
 	font-size: 30px;
+	text-decoration: underline;
 }
 .content {
 	background: #e4e4a1;
@@ -102,5 +109,6 @@ a {
 	border-radius: 15px;
 	padding: 10px;
 }
+
 
 
