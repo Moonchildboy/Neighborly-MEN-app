@@ -59,6 +59,10 @@ h1 {
 	z-index: -1;
 	float: flex;
 }
+.roomies{
+	background-color: :#e4e4a1;
+	width: 30%;
+}
 
 img{
 	width: 30%;
