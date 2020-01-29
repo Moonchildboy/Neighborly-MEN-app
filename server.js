@@ -42,8 +42,10 @@ app.use('/posts', postController)
 const buildingController = require('./controllers/buildingController')
 app.use('/buildings', buildingController)
 const userController = require('./controllers/userController')
+app.use('/users', userController)
 const commentController = require('./controllers/commentController')
 app.use('/comments', commentController)
+
 
 
 

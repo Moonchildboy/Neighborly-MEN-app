@@ -9,7 +9,6 @@
 		<div class="title">
 			Unit Number: <%=units[i].number%>
 			<% if (building.landlord == userId) { %> 
-
 	  		<a href="/buildings/unit/<%=units[i]._id%>/edit">(Edit Unit <%=units[i].number%>)</a>
 			<form method="POST" action="/users/buildings/unit/<%=units[i]._id%>?_method=DELETE">
 				<button>Delete Unit</button>
