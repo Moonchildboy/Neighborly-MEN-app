@@ -8,9 +8,8 @@
 		<% for (var i = 0; i < units.length; i++) { -%>
 			Unit Number: <%=units[i].number%>
 			<% for (var j = 0; j < units[i].tenants.length; j++) { -%>
-			<li>
-				<a href="/users/tenants[j]._id">
-					
+			<li>				
+				<a href="/users/<%=tenants[j]._id%>">	
 					<%=units[i].tenants[j].firstName%> <%=units[i].tenants[j].lastName%>
 					
 				</a>

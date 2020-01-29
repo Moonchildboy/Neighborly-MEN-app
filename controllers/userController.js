@@ -37,10 +37,8 @@ router.get('/community', async (req, res, next) => {
 		next(err)
 	}
 })
+
 // the following is to be a show route for...
-// router.get('/:id', (req, res, next) => {
-	
-// })
 
 
 module.exports = router
