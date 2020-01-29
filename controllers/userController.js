@@ -36,7 +36,7 @@ router.get('/community', async (req, res, next) => {
 			})
 		} else {
 			const unitsInBuilding = []
-			const address = ''
+			const address = 'You are not part of a community yet!'
 			res.render('users/community.ejs', {
 				units :unitsInBuilding,
 				address: address
