@@ -64,8 +64,8 @@ router.post('/login', async (req, res, next) => {
 
 		if(!user) {
 			console.log('bad username')
-			req.session.message = (`Username or password is incorrect.`)
-			    req.session.messageStatus = "bad"
+			req.session.message = 'Username or password is incorrect.'
+			req.session.messageStatus = "bad"
 			res.redirect('/auth/login')
 		} else {
 			if (user.password == req.body.password) {
@@ -77,6 +77,8 @@ router.post('/login', async (req, res, next) => {
 			    req.session.messageStatus = "good"
 			    res.redirect('/posts')
 			} else {
+				req.session.message = 'Username or password is incorrect.'
+				req.session.messageStatus = "bad"
 				console.log("bad password")
 				res.redirect('/auth/login')
 			}
