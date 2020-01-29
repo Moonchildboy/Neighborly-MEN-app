@@ -2,6 +2,9 @@ body {
 	background-color: #39481f;
 	color:#e4e4a1;
 }
+h1 {
+	text-align: center;
+}
 /*home page div*/
 #description-1{
 	background-color: #e4e4a1;
@@ -67,9 +70,37 @@ nav {
 	border: 1px solid #39481f;
 	margin-bottom: 15px;
 }
+li {
+	list-style: none;
+}
 
 a {
 	color: black;
+}
 
+.post {
+	border: 2px solid black;
+	border-radius: 15px;
+	background: olive;
+	width: 50%;
+	padding: 15px;
+	margin: 0 auto;
+	color: black;
+}
+
+.creator {
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.title {
+	font-size: 30px;
+}
+.content {
+	background: #e4e4a1;
+	border: 1px solid transparent;
+	border-radius: 15px;
+	padding: 10px;
+}
 
 

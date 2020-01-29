@@ -7,13 +7,18 @@
 <ul>
 
 	<% posts.forEach((post) => { %>
-		<% if (post.content != '') { %>
+	<% if (post.content != '') { %>
+	<div class="post">
 		<li>
-			<a href="users/<%=post.user._id%>">
-				By: <%=post.user.firstName%>
+		<div class ="creator">
+			By: 
+			<a  href="users/<%=post.user._id%>">
+				<%=post.user.firstName%>
 			</a><br>
-			<strong><%= post.title %></strong>
+		</div>
 		</li>
+		<div class="content">
+			<strong class="title"><%= post.title %></strong>
 	    <p>
 	    	<%= post.content %>
 	    </p>
@@ -26,6 +31,8 @@
     	<% } else { %>
     	<strong><%= post.title %></strong>
     	<% } %>
+    	</div>
+    </div>
 <% }) %>
 
 </ul>
