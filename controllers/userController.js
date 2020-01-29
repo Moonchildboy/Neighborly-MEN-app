@@ -12,10 +12,7 @@ router.get('/', async (req, res, next) => {
 	} catch(err) {
 		next(err)
 	}
-})
-
-
-// my community
+}) // qualifies as the my community route
 
 router.get('/community', async (req, res, next) => {
 	try{
@@ -42,12 +39,10 @@ router.get('/community', async (req, res, next) => {
 		next(err)
 	}
 })
-
-
-
-
-
-
+// the following is to be a show route for...
+// router.get('/:id', (req, res, next) => {
+	
+// })
 
 
 module.exports = router
