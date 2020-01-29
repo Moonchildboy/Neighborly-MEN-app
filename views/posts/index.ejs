@@ -27,6 +27,15 @@
         <button>Delete</button>
     	</form>
     	<%}%>
+
+	    <h4>Comments</h4>
+	  	<form method="POST" action="/comments/<%= post._id %>">
+	    <textarea name="text" placeholder="Enter comment"></textarea>
+	    <br />
+	    <button>Add comment</button>
+	  	</form>
+
+
     	<% } else { %>
     	<strong><%= post.title %></strong>
     	<% } %>

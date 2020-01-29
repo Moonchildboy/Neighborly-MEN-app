@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const Comment = require('./comment')
 const postSchema = new mongoose.Schema({
 	title: String,
 	content: String,
@@ -6,7 +7,7 @@ const postSchema = new mongoose.Schema({
 		type: Date,
 		default: Date.now
 	},
-	// comments: [Comment.schema],
+	comments: [Comment.schema],
 	user: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'User'
