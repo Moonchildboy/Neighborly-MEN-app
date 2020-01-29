@@ -1,17 +1,18 @@
-<%- include('../partials/header2.ejs')%>
+<%- include('../partials/header.ejs')%>
 
 	<h1>My Community</h1>
 
 	<p>Building Address: <%=address%></p>
 
 	<ul>
-		<% for (var i = 0; i < units.length; i++) { -%>
+		<% for (let i = 0; i < units.length; i++) { -%>
 			Unit Number: <%=units[i].number%>
-			<% for (var j = 0; j < units[i].tenants.length; j++) { -%>
-			<li>				
-				<a href="/users/<%=tenants[j]._id%>">	
-					<%=units[i].tenants[j].firstName%> <%=units[i].tenants[j].lastName%>
+
+			<% for (let j = 0; j < units[i].tenants.length; j++) { -%>
+			<li>
+				<a href="/users/<%=units[i].tenants[j]._id%>">
 					
+					<%=units[i].tenants[j].firstName%> <%=units[i].tenants[j].lastName%>
 				</a>
 			</li> 
 			<% } -%>

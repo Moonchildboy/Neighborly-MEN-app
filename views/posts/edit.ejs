@@ -1,14 +1,17 @@
-<%- include('../partials/header2.ejs')%>
+<%- include('../partials/header.ejs')%>
 
 
 <form method="POST" action="/posts/<%= post._id %>?_method=PUT">
 
-
+	<h1>Edit Post</h1>
 
  <fieldset>
       <label for="title">Post Title:</label>
       <input id="title" type="text" name="title" placeholder="New post title" value="<%= post.title %>" />
-      <button>edit</button>
+      <label for="content">Content:</label>
+	  <textarea id="new-post" placeholder="Create a new post here" name="content" value="<%=post.content%>"><%=post.content%></textarea>
+	  <br>
+      <button>update post</button>
 </fieldset>
 
 <%- include('../partials/footer.ejs')%>

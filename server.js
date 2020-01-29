@@ -22,7 +22,16 @@ app.use(session({
 	saveUninitialized: false
 }))
 
-
+app.use((req, res, next) => {
+  if(req.session.loggedIn) {
+    res.locals.username = req.session.username
+    res.locals.userId = req.session.userId
+  } else {
+    res.locals.username = false
+    res.locals.userId = undefined
+  }
+  next()
+})
 
 
 // CONTROLLERS

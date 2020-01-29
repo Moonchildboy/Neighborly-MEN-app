@@ -1,4 +1,4 @@
-<%- include('../partials/header2.ejs')%>
+<%- include('../partials/header.ejs')%>
 
 <h1>Community News Feed</h1>
 
@@ -6,16 +6,22 @@
 
 <ul>
 
-
 	<% posts.forEach((post) => { %>
 		<li>
+			<a href="users/<%=post.user._id%>">
+				By: <%=post.user.firstName%>
+			</a><br>
 			<strong><%= post.title %></strong>
 		</li>
 	    <p>
 	    	<%= post.content %>
 	    </p>
+	   <% if (currentUserId == post.user._id) { %> 
 	  	<a href="/posts/<%= post._id %>/edit">(Edit <%=post.title%>)</a>
-
+	  	<form method="POST" action="/posts/<%= post._id %>?_method=DELETE">
+        <button>Delete</button>
+    	</form>
+    	<%}%>
 <% }) %>
 
 </ul>
