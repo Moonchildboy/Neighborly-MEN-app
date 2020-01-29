@@ -7,6 +7,7 @@ const Building = require('../models/building')
 
 
 router.get('/new', (req, res, next) => {
+
 	res.render('posts/new.ejs')
 })
 
@@ -20,6 +21,12 @@ router.post('/', async (req, res, next) => {
 }) //end of create route
 
 router.get('/', async (req, res, next) => {
+	let message = req.session.message
+  	let messageStatus = req.session.messageStatus
+
+  	req.session.message = undefined
+  	req.session.messageStatus = undefined
+
 	const currentUserId = req.session.userId
 	const unit = await Unit.findOne({tenants: {"$in": req.session.userId}})
 	if (unit) {
@@ -29,7 +36,9 @@ router.get('/', async (req, res, next) => {
 
 	  	res.render('posts/index.ejs', {
 	  		posts: allPosts,
-	  		currentUserId: currentUserId
+	  		currentUserId: currentUserId,
+	  		message: message,
+			status: messageStatus
 	  	})
 	}
 	else {

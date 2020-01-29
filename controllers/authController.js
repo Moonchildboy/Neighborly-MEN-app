@@ -47,7 +47,15 @@ router.post('/register', async (req, res, next) => {
 
 
 router.get('/login', (req, res) => {
-	res.render('login.ejs')
+	let message = req.session.message
+  	let messageStatus = req.session.messageStatus
+
+  	req.session.message = undefined
+  	req.session.messageStatus = undefined
+	res.render('login.ejs', {
+		message: message,
+		status: messageStatus
+	})
 })
 
 router.post('/login', async (req, res, next) => {
@@ -55,7 +63,9 @@ router.post('/login', async (req, res, next) => {
 		const user = await User.findOne({ username: req.body.username })
 
 		if(!user) {
-			console.log('bad username');
+			console.log('bad username')
+			req.session.message = (`Username or password is incorrect.`)
+			    req.session.messageStatus = "bad"
 			res.redirect('/auth/login')
 		} else {
 			if (user.password == req.body.password) {
