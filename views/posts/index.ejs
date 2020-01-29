@@ -8,7 +8,9 @@
 
 	<% posts.forEach((post) => { %>
 		<li>
-			By: <%=post.user.firstName%><br>
+			<a href="users/<%=post.user._id%>">
+				By: <%=post.user.firstName%>
+			</a><br>
 			<strong><%= post.title %></strong>
 		</li>
 	    <p>
