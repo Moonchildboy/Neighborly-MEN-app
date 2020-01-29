@@ -1,0 +1,32 @@
+<%- include('../partials/header.ejs')%>
+
+	<h1>Edit Unit <%=unit.number%></h1>
+	<form method="POST" action="/users/community/buildings/unit/<%=unit._id%>?_method=PUT">
+		<fieldset>
+			<legend>
+				<small>
+					New Unit
+				</small>
+			</legend>
+			<label for="building">Select Building:</label>
+			<select name="building">
+			<% for(let i = 0; i < buildings.length; i++) { %>
+				<%=i%>
+				<option value="<%=buildings[i]._id%>"><%=buildings[i].address%></option>
+			<% } %>
+			</select>
+			<label for="number">Unit Number:</label>
+			<input type="text" name="number" placeholder="enter unit number" value="<%=unit.number%>">
+			<label for="tenants">Select Tenants:</label>
+			<select  name="tenants" multiple>
+			<% for(let i = 0; i < users.length; i++) { %>
+				<%=i%>
+				<option value=<%=users[i]._id%>><%=users[i].firstName%> <%=users[i].lastName%></option>
+			<% } %>
+		</select>
+		<button>Submit!</button>
+		</fieldset>
+	</form>
+
+
+<%- include('../partials/footer.ejs')%>

@@ -12,7 +12,7 @@ router.get('/new', (req, res) => {
 router.get('/unit', async (req, res) => {
 	const foundBuildings = await Building.find({}).populate('units')
 	const foundUsers = await User.find({})
-	
+
 	res.render('buildings/unit.ejs', {
 		users: foundUsers,
 		buildings: foundBuildings
@@ -39,6 +39,22 @@ router.post('/unit', async (req, res, next) => {
 		next(err)
 	}
 }) // create route to be made into a render
+
+router.get('/unit/:id/edit', async (req, res, next) => {
+	try{
+		const foundBuildings = await Building.find({}).populate('units')
+		const foundUsers = await User.find({})
+		const foundUnit = await Unit.findById(req.params.id)
+		res.render('buildings/edit.ejs', {
+			unit: foundUnit,
+			buildings: foundBuildings,
+			users: foundUsers
+		})
+	}catch(err) {
+		next(err)
+	}
+}) 
+
 
 
 
