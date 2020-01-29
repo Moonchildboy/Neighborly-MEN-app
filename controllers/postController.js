@@ -7,6 +7,7 @@ const Building = require('../models/building')
 
 
 router.get('/new', (req, res, next) => {
+
 	res.render('posts/new.ejs')
 })
 
@@ -20,20 +21,31 @@ router.post('/', async (req, res, next) => {
 }) //end of create route
 
 router.get('/', async (req, res, next) => {
+	let message = req.session.message
+  	let messageStatus = req.session.messageStatus
+
+  	req.session.message = undefined
+  	req.session.messageStatus = undefined
+
 	const currentUserId = req.session.userId
 	const unit = await Unit.findOne({tenants: {"$in": req.session.userId}})
 	if (unit) {
 		const buildingId = unit.building
-		const allPosts = await Post.find({building: buildingId}).populate('user')
-		console.log(allPosts);
+		const allPosts = await Post.find({building: buildingId}).populate('user').populate('comments')
+		console.log(allPosts[0].comments);
 
 	  	res.render('posts/index.ejs', {
 	  		posts: allPosts,
-	  		currentUserId: currentUserId
+	  		currentUserId: currentUserId,
+	  		message: message,
+			status: messageStatus
 	  	})
 	}
 	else {
-		const allPosts = []
+		const allPosts = [{
+			title: 'Nothing to show from your community!',
+			content: '',
+		}]
 		res.render('posts/index.ejs', {posts: allPosts})	
 	}
 })// end of index route

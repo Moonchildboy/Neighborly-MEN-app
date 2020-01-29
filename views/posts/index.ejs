@@ -2,17 +2,22 @@
 
 <h1>Community News Feed</h1>
 
-
+<p class=<%=status%>><%=message%></p>
 
 <ul>
-
 	<% posts.forEach((post) => { %>
+	<% if (post.content != '') { %>
+	<div class="post">
 		<li>
-			<a href="users/<%=post.user._id%>">
-				By: <%=post.user.firstName%>
+		<div class ="creator">
+			By: 
+			<a  href="users/<%=post.user._id%>">
+				<%=post.user.firstName%>
 			</a><br>
-			<strong><%= post.title %></strong>
+		</div>
 		</li>
+		<div class="content">
+			<strong class="title"><%= post.title %></strong>
 	    <p>
 	    	<%= post.content %>
 	    </p>
@@ -22,6 +27,20 @@
         <button>Delete</button>
     	</form>
     	<%}%>
+
+	    <h4>Comments</h4>
+	  	<form method="POST" action="/comments/<%= post._id %>">
+	    <textarea name="text" placeholder="Enter comment"></textarea>
+	    <br />
+	    <button>Add comment</button>
+	  	</form>
+
+
+    	<% } else { %>
+    	<strong><%= post.title %></strong>
+    	<% } %>
+    	</div>
+    </div>
 <% }) %>
 
 </ul>
