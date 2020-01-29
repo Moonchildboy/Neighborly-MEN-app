@@ -20,12 +20,17 @@ router.post('/', async (req, res, next) => {
 }) //end of create route
 
 router.get('/', async (req, res, next) => {
+	const currentUserId = req.session.userId
 	const unit = await Unit.findOne({tenants: {"$in": req.session.userId}})
 	if (unit) {
 		const buildingId = unit.building
 		const allPosts = await Post.find({building: buildingId}).populate('user')
 		console.log(allPosts);
-	  	res.render('posts/index.ejs', {posts: allPosts})
+
+	  	res.render('posts/index.ejs', {
+	  		posts: allPosts,
+	  		currentUserId: currentUserId
+	  	})
 	}
 	else {
 		const allPosts = []

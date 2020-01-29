@@ -14,11 +14,12 @@
 	    <p>
 	    	<%= post.content %>
 	    </p>
+	   <% if (currentUserId == post.user._id) { %> 
 	  	<a href="/posts/<%= post._id %>/edit">(Edit <%=post.title%>)</a>
 	  	<form method="POST" action="/posts/<%= post._id %>?_method=DELETE">
         <button>Delete</button>
     	</form>
-
+    	<%}%>
 <% }) %>
 
 </ul>
