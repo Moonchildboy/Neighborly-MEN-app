@@ -64,13 +64,14 @@ router.get('/:id', async (req, res, next) => {
 		next(err)
 	}
 })
-<<<<<<< HEAD
 
-// the following is to be a show route for...
-=======
->>>>>>> f6f007745675300bfed90b2311c73c3b2214a0dd
-
-
-
+router.delete('/buildings/unit/:id', async (req, res, next) => {
+	try{
+		await Unit.findByIdAndRemove(req.params.id)
+		res.redirect('/users/community')
+	} catch (err) {
+		next(err)
+	}
+})
 
 module.exports = router

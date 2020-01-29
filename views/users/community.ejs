@@ -9,9 +9,11 @@
 			<a href="buildings/unit/<%=units[i]._id%>">Unit Number: <%=units[i].number%></a>
 			<% if (building.landlord == userId) { %> 
 	  		<a href="/buildings/unit/<%=units[i]._id%>/edit">(Edit <%=units[i].number%>)</a>
-    		</form>
+			<form method="POST" action="/users/buildings/unit/<%=units[i]._id%>?_method=DELETE">
+			<button>Delete Unit</button>
+			</form>
     		<%}%>
-    		
+
 			<% for (let j = 0; j < units[i].tenants.length; j++) { -%>
 			<li>
 				<a href="/users/<%=units[i].tenants[j]._id%>">
