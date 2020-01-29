@@ -9,7 +9,7 @@
 			Unit Number: <%=units[i].number%>
 			<% for (let j = 0; j < units[i].tenants.length; j++) { -%>
 			<li>
-				<a href="/users/tenants[j]._id">
+				<a href="/users/<%=units[i].tenants[j]._id%>">
 					
 					<%=units[i].tenants[j].firstName%> <%=units[i].tenants[j].lastName%>
 				</a>

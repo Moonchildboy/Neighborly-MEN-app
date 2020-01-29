@@ -14,6 +14,10 @@ router.get('/', async (req, res, next) => {
 	}
 }) // qualifies as the my community route
 
+
+
+
+
 router.get('/community', async (req, res, next) => {
 	try{
 		const unit = await Unit.findOne({tenants: {"$in": req.session.userId}})
@@ -39,10 +43,15 @@ router.get('/community', async (req, res, next) => {
 		next(err)
 	}
 })
-// the following is to be a show route for...
-// router.get('/:id', (req, res, next) => {
-	
-// })
+
+router.get('/:id', async (req, res, next) => {
+	try{
+		const user = await User.findById(req.params.id)
+		res.render('users/show.ejs', {user: user})
+	} catch(err) {
+		next(err)
+	}
+})
 
 
 module.exports = router
