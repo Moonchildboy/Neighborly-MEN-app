@@ -40,10 +40,10 @@ router.post('/register', async (req, res, next) => {
 	} else {
 		const createdUser = await User.create(req.body)
 		console.log(createdUser);
-		req.session.userId = createdUser._id
-		req.session.username = createdUser.username
+		// req.session.userId = createdUser._id
+		// req.session.username = createdUser.username
 		req.session.message = (`Welcome to Neighborlie, ${createdUser.username}.`)
-		req.session.loggedIn = true
+		// req.session.loggedIn = true
 		req.session.messageStatus = "good"
 		res.redirect('/')
 	}
