@@ -24,12 +24,15 @@ router.get('/community', async (req, res, next) => {
 		if (unit) {
 			const buildingId = unit.building
 			const building = await Building.findById(buildingId)
-			console.log(building);
+			console.log(building.landlord);
+			console.log(req.session.userId);
 			const unitsInBuilding = await Unit.find({building: buildingId}).populate('tenants')
 			console.log("units in building", unitsInBuilding);
 			res.render('users/community.ejs', {
 				units :unitsInBuilding,
-				address: building.address
+				address: building.address,
+				building: building,
+				userId : req.session.userId
 			})
 		} else {
 			const unitsInBuilding = []
@@ -39,6 +42,15 @@ router.get('/community', async (req, res, next) => {
 				address: address
 			})
 		}
+	}catch(err) {
+		next(err)
+	}
+})
+
+router.put('/community/buildings/unit/:id', async (req, res, next) => {
+	try{
+		await Unit.findByIdAndUpdate(req.params.id, req.body)
+		res.redirect('/users/community')
 	}catch(err) {
 		next(err)
 	}
@@ -57,6 +69,8 @@ router.get('/:id', async (req, res, next) => {
 // the following is to be a show route for...
 =======
 >>>>>>> f6f007745675300bfed90b2311c73c3b2214a0dd
+
+
 
 
 module.exports = router
