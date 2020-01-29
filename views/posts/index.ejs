@@ -35,6 +35,13 @@
 	    <button>Add comment</button>
 	  	</form>
 
+	  	<%post.comments.forEach((comment) =>{ %>
+	  	<li>
+	  		<%=comment.text%> (<%=comment.date.toLocaleString()%>) 
+	  	</li>
+	  	<br>
+	  	<%})%>
+
 
     	<% } else { %>
     	<strong><%= post.title %></strong>
