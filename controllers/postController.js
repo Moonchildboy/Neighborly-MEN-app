@@ -33,6 +33,15 @@ router.get('/', async (req, res, next) => {
 	}
 })// end of index route
 
+router.delete('/:id', async (req, res, next) => {
+	try{
+		await Post.findByIdAndRemove(req.params.id)
+		res.redirect('/posts')
+	}catch(err){
+		next(err)
+	}
+})
+
 router.get('/:id/edit', async (req, res, next) => {
 	Post.findById(req.params.id, (err, foundPost) => {
 	if(err) {
@@ -44,6 +53,15 @@ router.get('/:id/edit', async (req, res, next) => {
     }
   })
 }) //end of edit route
+
+router.put('/:id', async (req, res, next) => {
+	try{
+		await Post.findByIdAndUpdate(req.params.id, req.body)
+		res.redirect('/posts')
+	}catch(err){
+		next(err)
+	}
+})
 
 module.exports = router 
 

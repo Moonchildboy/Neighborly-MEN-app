@@ -15,6 +15,9 @@
 	    	<%= post.content %>
 	    </p>
 	  	<a href="/posts/<%= post._id %>/edit">(Edit <%=post.title%>)</a>
+	  	<form method="POST" action="/posts/<%= post._id %>?_method=DELETE">
+        <button>Delete</button>
+    	</form>
 
 <% }) %>
 
