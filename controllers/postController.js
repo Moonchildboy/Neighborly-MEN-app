@@ -33,7 +33,10 @@ router.get('/', async (req, res, next) => {
 	  	})
 	}
 	else {
-		const allPosts = []
+		const allPosts = [{
+			title: 'Nothing to show from your community!',
+			content: '',
+		}]
 		res.render('posts/index.ejs', {posts: allPosts})	
 	}
 })// end of index route
