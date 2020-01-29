@@ -7,9 +7,13 @@ const postSchema = new mongoose.Schema({
 		default: Date.now
 	},
 	// comments: [Comment.schema],
+	user: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'User'
+	},
 	building: {
 		type: mongoose.Schema.Types.ObjectId,
-		ref: 'Building'
+		ref: 'User'
 	}
 }) 
 

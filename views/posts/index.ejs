@@ -6,9 +6,9 @@
 
 <ul>
 
-
 	<% posts.forEach((post) => { %>
 		<li>
+			By: <%=post.user.firstName%><br>
 			<strong><%= post.title %></strong>
 		</li>
 	    <p>
