@@ -65,7 +65,13 @@ router.get('/:id', async (req, res, next) => {
 	}
 })
 
-
-
+router.delete('/buildings/unit/:id', async (req, res, next) => {
+	try{
+		await Unit.findByIdAndRemove(req.params.id)
+		res.redirect('/users/community')
+	} catch (err) {
+		next(err)
+	}
+})
 
 module.exports = router
