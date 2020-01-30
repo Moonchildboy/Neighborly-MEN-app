@@ -6,7 +6,7 @@
 	<ul>
 		<% for (let i = 0; i < units.length; i++) { -%>
 <div class="post">
-		<div class="title">
+		<div class="content">
 			Unit Number: <%=units[i].number%>
 			<% if (building.landlord == userId) { %> 
 
@@ -14,9 +14,8 @@
 			<form method="POST" action="/users/buildings/unit/<%=units[i]._id%>?_method=DELETE">
 				<button>Delete Unit</button>
 			</form>
-	  		</div>
     		<%}%>
-	  	<div class="content">
+	  
 			<% for (let j = 0; j < units[i].tenants.length; j++) { -%>
 			<li>
 				<a href="/users/<%=units[i].tenants[j]._id%>">		
@@ -24,7 +23,7 @@
 				</a>
 			</li> 
 			<% } -%>
-		</div>
+  		</div>
 </div>
 		<% } -%>
 	</ul>

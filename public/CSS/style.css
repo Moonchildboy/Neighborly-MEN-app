@@ -88,14 +88,11 @@ a {
 }
 
 .post {
-	border: 2px solid black;
-	border-radius: 15px;
-	background: olive;
-	width: 50%;
-	padding: 15px;
-	margin: 0 auto;
-	color: black;
-	margin-bottom: 10px;
+	position: relative;
+	color: red;
+	background-color: #e4e4a1;
+	border: 10px solid rgba(0, 0, 0, .2);
+	border-radius: 10px 
 }
 
 .creator {
@@ -108,10 +105,11 @@ a {
 	text-decoration: underline;
 }
 .content {
-	background: #e4e4a1;
-	border: 1px solid transparent;
-	border-radius: 15px;
-	padding: 10px;
+	position: relative;
+	color: red;
+	background-color: #e4e4a1;
+	border: 10px solid rgba(0, 0, 0, .2);
+	border-radius: 10px 
 }
 
 .address {
