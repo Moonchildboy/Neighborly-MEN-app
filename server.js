@@ -11,7 +11,7 @@ require('./db/db')
 
 
 // MIDDLEWARE
-app.use(express.static('public'))
+app.use(express.static('public_assets'))
 app.use(methodOverride('_method'))
 app.use(bodyParser.urlencoded({ extended: false }))
 
