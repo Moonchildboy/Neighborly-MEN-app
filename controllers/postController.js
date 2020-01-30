@@ -30,9 +30,8 @@ router.get('/', async (req, res, next) => {
 	const unit = await Unit.findOne({tenants: {"$in": req.session.userId}})
 	if (unit) {
 		const buildingId = unit.building
-		const allPosts = await Post.find({building: buildingId}).populate('user')
+		const allPosts = await Post.find({building: buildingId}).populate('user').populate('comments.user')
 		console.log('this is all posts');
-		console.log(allPosts);
 
 	  	res.render('posts/index.ejs', {
 	  		posts: allPosts,

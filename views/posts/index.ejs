@@ -38,7 +38,8 @@
 
 	  	<%post.comments.forEach((comment) =>{ %>
 	  	<li class="comment">
-	  		<%=comment.text%> (<%=comment.date.toLocaleString()%>) 
+	  		 <%=comment.text%> <br> 
+	  		 -<%=comment.user.firstName%> (<%=comment.date.toLocaleString()%>)
 	  	</li>
 	  	<br>
 	  	<%})%>
