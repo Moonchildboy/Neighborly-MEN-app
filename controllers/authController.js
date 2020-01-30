@@ -42,7 +42,7 @@ router.post('/register', async (req, res, next) => {
 		console.log(createdUser);
 		req.session.message = `Sucessfully registered. Thanks for joining, ${createdUser.firstName}!`
 		req.session.messageStatus = "good"
-		res.redirect('/login')
+		res.redirect('/auth/login')
 	}
 })
 
