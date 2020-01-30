@@ -7,7 +7,6 @@ const Building = require('../models/building')
 
 
 router.get('/new', (req, res, next) => {
-
 	res.render('posts/new.ejs')
 })
 
