@@ -12,6 +12,8 @@ router.post('/:postId', async (req, res, next) => {
   }
   post.comments.push(commentToAdd)
   await post.save() 
+  console.log('this is the post we are pushing comments into');
+  console.log(post);
   res.redirect('/posts')
 })
 

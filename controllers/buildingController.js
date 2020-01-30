@@ -49,7 +49,6 @@ router.post('/unit', async (req, res, next) => {
 		next(err)
 	}
 }) // create route to be made into a render
-
 router.get('/unit/:id/edit', async (req, res, next) => {
 	try{
 		const foundBuildings = await Building.find({}).populate('units')

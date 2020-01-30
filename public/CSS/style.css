@@ -1,3 +1,10 @@
+
+/*font-family: 'Sarina', cursive;
+font-family: 'Playfair Display', serif;
+font-family: 'Inconsolata', monospace;
+font-family: 'Josefin Sans', sans-serif;*/
+
+
 body {
 	background-color: #39481f;
 	color:#e4e4a1;
@@ -69,30 +76,43 @@ img{
 	height: 300px;
 }
 
+a {
+	color: black;
+}
 nav {
 	background-color: #e4e4a1;
-	color: black;
+	color: #39481f;
 	position: -webkit-sticky;
 	position: sticky;
 	top: 20px;
 	padding:9px;
 	border: 1px solid #39481f;
 	margin-bottom: 15px;
+	z-index: 1;	
 }
 li {
 	list-style: none;
 }
 
-a {
-	color: black;
-}
 
 .post {
 	position: relative;
+<<<<<<< HEAD
 	color: red;
 	background-color: #e4e4a1;
 	border: 10px solid rgba(0, 0, 0, .2);
 	border-radius: 10px 
+=======
+	border: 2px solid black;
+	border-radius: 15px;
+	background: #e4e4a1;
+	width: 50%;
+	padding: 15px;
+	margin: 0 auto;
+	color: black;
+	margin-bottom: 10px;
+
+>>>>>>> 52dc35d6c003cb2cb8ec370f8b81fbdb611f35cb
 }
 
 .creator {
@@ -105,15 +125,96 @@ a {
 	text-decoration: underline;
 }
 .content {
+<<<<<<< HEAD
 	position: relative;
 	color: red;
 	background-color: #e4e4a1;
 	border: 10px solid rgba(0, 0, 0, .2);
 	border-radius: 10px 
+=======
+	background: #e4e4a1;
+	border: 1px solid transparent;
+	border-radius: 15px;
+	padding: 10px;
+	box-shadow: 0px 0px 5px #1d2410;
+>>>>>>> 52dc35d6c003cb2cb8ec370f8b81fbdb611f35cb
 }
 
 .address {
 	text-align: center;
 }
+
+.logo {
+	text-align: center;
+	font-family: 'Sarina', cursive;
+	font-size: 50px;
+	border: 6px solid #e4e4a1;
+	padding: 10px 0;
+	margin: 15px;
+}
+
+.container {
+	display: flex;
+	justify-content: space-around;
+	border: 2px solid #e4e4a1;
+}
+
+.prof {
+	display: inline;
+
+}
+
+.userImg {
+	border: 1px solid transparent;
+	border-radius: 50%;
+	width: 35px;
+	height: 40px;
+}
+
+.name {
+	position: absolute;
+	top: 12px;
+	left: 55px;
+}
+
+.containerTwo {
+	border: 2px solid #e4e4a1;
+	border-radius: 15px;
+	background-color: #e4e4a1;
+	height: 40px;
+	box-shadow: 0px 0px 5px #1d2410;
+}
+
+.comment {
+	box-shadow: 0px 0px 5px #1d2410;
+	padding: 10px;
+}
+
+.add{
+	margin-bottom: 10px;
+}
+
+button {
+	background-color: #7F2608;
+	color: #e4e4a1;
+	padding: 10px;
+	border-radius: 12px;
+}
+
+button:hover { 
+	background-color: #671F06;
+}
+
+#description-1 {
+	margin: 0 auto;
+}
+
+.contain {
+	width: 100px;
+}
+
+
+
+
 
 

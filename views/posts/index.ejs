@@ -2,18 +2,23 @@
 
 <h1>Community News Feed</h1>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 52dc35d6c003cb2cb8ec370f8b81fbdb611f35cb
 
 <ul>
 	<% posts.forEach((post) => { %>
 	<% if (post.content != '') { %>
+<p class=<%=status%>><%=message%></p>
 	<div class="post">
 		<li>
-		<div class ="creator">
-			By: 
+		<div class ="creator"> 	
+			<div class="containerTwo">
 			<a  href="users/<%=post.user._id%>">
-				<%=post.user.firstName%>
+				<img class="userImg" src="<%=post.user.image%>"> <p class="name"><%=post.user.firstName%></p>
 			</a><br>
+			</div>
 		</div>
 		</li>
 		<div class="content">
@@ -32,8 +37,15 @@
 	  	<form method="POST" action="/comments/<%= post._id %>">
 	    <textarea name="text" placeholder="Enter comment"></textarea>
 	    <br />
-	    <button>Add comment</button>
+	    <button class="add">Add comment</button>
 	  	</form>
+
+	  	<%post.comments.forEach((comment) =>{ %>
+	  	<li class="comment">
+	  		<%=comment.text%> (<%=comment.date.toLocaleString()%>) 
+	  	</li>
+	  	<br>
+	  	<%})%>
 
 
     	<% } else { %>
