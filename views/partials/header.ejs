@@ -3,19 +3,26 @@
 <head>
   <title></title>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Josefin+Sans|Playfair+Display|Sarina&display=swap" rel="stylesheet">
+  	<h2 class="logo">Neighborlie</h2>
+
   <nav>
   	<% if (username !== false)  { %>
-	  	<a href="/posts">NewsFeed</a> | 
-	  	<a href="/posts/new">NewPost</a> |
-	  	<a href="/buildings/new">NewBuilding</a> |
-	    <a href="/buildings/unit">NewUnit</a> |
-	  	<a href="/users/community">MyCommunity</a> |
-	  	<a href="/users">MyProfile</a> |
+  	<div class="container">
+	  	<a href="/posts">NewsFeed</a> 
+	  	<a href="/posts/new">NewPost</a> 
+	  	<a href="/buildings/new">NewBuilding</a> 
+	    <a href="/buildings/unit">NewUnit</a> 
+	  	<a href="/users/community">MyCommunity</a> 
+	  	<a href="/users">MyProfile</a> 
 	  	<a href="/auth/logout">Logout</a>
+	</div>
 	<% } else { %>
-		<a href="/">Home</a> |
-	  	<a href="/auth/register">Sign-Up</a> |
+	<div class="container">
+		<a href="/">Home</a> 
+	  	<a href="/auth/register">Sign-Up</a> 
 	  	<a href="/auth/login">Login</a> 
+	</div>
 	<% } %>
   </nav>
 </head>

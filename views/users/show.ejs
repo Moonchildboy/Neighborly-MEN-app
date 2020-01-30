@@ -2,8 +2,15 @@
 <%- include('../partials/header.ejs')%>
 
 	<h1><%=user.firstName%>'s Profile</h1>
-	<img src="<%=user.image%>">
-	<p><%=user.aboutMe%></p>
+	<div class="container">
+		<div class="prof">
+			<div class="contain">
+				<p>About Me:</p>
+				<p ><%=user.aboutMe%></p>
+			</div>
+		</div>
+		<img class="prof" src="<%=user.image%>">
+	</div>
 
 
 
