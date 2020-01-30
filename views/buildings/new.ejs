@@ -2,13 +2,15 @@
 
 	<h1>Add a New Building</h1>
 
-	<form method="POST" action="/buildings">
-		<fieldset>
-			<label for="address">Address:</label>
+<form method="POST" action="/buildings">
+	<div class="new-building">	
+
+			<label class="new-building-labels" for="address">Address:</label>
 			<input type="text" name="address" placeholder="enter building address">
-			<label for="floors">Number of Floors:</label>
+			<label class="new-building-labels" for="floors">Number of Floors:</label>
 			<input type="text" name="floors" placeholder="enter number of floor">
 		<button>Submit!</button>
-		</fieldset>
+
+	</div>
 	</form>
 <%- include('../partials/footer.ejs')%>

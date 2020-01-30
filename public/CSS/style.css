@@ -198,10 +198,19 @@ button:hover {
 .contain {
 	width: 100px;
 }
+
 .app-name{
 	color:#7F2608;
 }
-
+.new-building-labels{ 
+	color: black;
+ }
+.new-building{
+	background-color: #e4e4a1;
+	border-radius: 10px;
+	padding: 15px;
+	box-shadow: 0px 0px 5px #1d2410;
+}
 
 
 
