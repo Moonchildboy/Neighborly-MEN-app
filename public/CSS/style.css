@@ -97,12 +97,6 @@ li {
 
 .post {
 	position: relative;
-<<<<<<< HEAD
-	color: red;
-	background-color: #e4e4a1;
-	border: 10px solid rgba(0, 0, 0, .2);
-	border-radius: 10px 
-=======
 	border: 2px solid black;
 	border-radius: 15px;
 	background: #e4e4a1;
@@ -112,7 +106,6 @@ li {
 	color: black;
 	margin-bottom: 10px;
 
->>>>>>> 52dc35d6c003cb2cb8ec370f8b81fbdb611f35cb
 }
 
 .creator {
@@ -125,19 +118,11 @@ li {
 	text-decoration: underline;
 }
 .content {
-<<<<<<< HEAD
-	position: relative;
-	color: red;
-	background-color: #e4e4a1;
-	border: 10px solid rgba(0, 0, 0, .2);
-	border-radius: 10px 
-=======
 	background: #e4e4a1;
 	border: 1px solid transparent;
 	border-radius: 15px;
 	padding: 10px;
 	box-shadow: 0px 0px 5px #1d2410;
->>>>>>> 52dc35d6c003cb2cb8ec370f8b81fbdb611f35cb
 }
 
 .address {
